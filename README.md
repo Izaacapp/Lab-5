@@ -1,3 +1,67 @@
+Got it. Let's reorganize your project directory and update the commands accordingly. Here is the updated directory structure and the commands to move the files.
+
+### Directory Structure
+
+```
+Lab-5/
+│
+├── .vscode/
+│   └── launch.json
+│
+├── src/
+│   ├── Main.java
+│   └── node.java
+│
+├── bin/
+│   ├── Main.class
+│   └── node.class
+│
+├── data/
+│   ├── output1.txt
+│   ├── output2.txt
+│   ├── output3.txt
+│   ├── results.csv
+│   └── results.xlsx
+│
+├── images/
+│   └── performance.png
+│
+├── scripts/
+│   └── merge_outputs_to_csv.py
+│
+├── .DS_Store
+├── README.md
+```
+
+### Commands to Move the Files
+
+```bash
+cd /Users/beck/GitHub/myRepos/Lab-5
+
+# Create the directory structure
+mkdir -p src bin data images scripts
+
+# Move the files into their respective directories
+mv Main.java src/
+mv Main.class bin/
+mv node.class bin/
+mv output1.txt data/
+mv output2.txt data/
+mv output3.txt data/
+mv results.csv data/
+mv results.xlsx data/
+mv performance.png images/
+mv merge_outputs_to_csv.py scripts/
+```
+
+### Update Your README.md with the New Structure
+
+Update the README.md to reflect the new directory structure. The previous README.md content can be reused but adjusted to point to the new file paths.
+
+---
+
+## README.md
+
 # Skip List and Tree Set Performance Comparison
 
 This project compares the performance of Skip List and Tree Set data structures in Java. The primary focus is on measuring the time taken for insertion, deletion, and total actions for various test sizes. The results are analyzed and visualized using Excel.
@@ -64,14 +128,14 @@ cd Lab-5
 
 ### Compiling the Java Program
 ```bash
-javac Main.java
+javac -d bin src/*.java
 ```
 
 ### Running the Java Program to Generate Output Files
 ```bash
-java Main > output1.txt
-java Main > output2.txt
-java Main > output3.txt
+java -cp bin Main > data/output1.txt
+java -cp bin Main > data/output2.txt
+java -cp bin Main > data/output3.txt
 ```
 
 ## Running the Experiments
@@ -95,7 +159,7 @@ java Main > output3.txt
 
 To process the output files and generate a CSV file for easy import into Excel, we used a Python script. The script reads the output files, calculates the average times for insertion, deletion, and total actions, and writes the results to a CSV file.
 
-### Python Script (`process_data.py`):
+### Python Script (`scripts/merge_outputs_to_csv.py`):
 ```python
 import re
 import csv
@@ -164,9 +228,9 @@ def process_file(filename):
     return data
 
 # Process all output files
-data1 = process_file('output1.txt')
-data2 = process_file('output2.txt')
-data3 = process_file('output3.txt')
+data1 = process_file('data/output1.txt')
+data2 = process_file('data/output2.txt')
+data3 = process_file('data/output3.txt')
 
 # Merge the data and calculate averages
 merged_data = []
@@ -178,12 +242,14 @@ for entry1, entry2, entry3 in zip(data1, data2, data3):
         'skip_list_delete_avg': (entry1['skip_list_delete'] + entry2['skip_list_delete'] + entry3['skip_list_delete']) / 3,
         'skip_list_actions_avg': (entry1['skip_list_actions'] + entry2['skip_list_actions'] + entry3['skip_list_actions']) / 3,
         'tree_set_insert_avg': (entry1['tree_set_insert'] + entry2['tree_set_insert'] + entry3['tree_set_insert']) / 3,
-        'tree_set_delete_avg': (entry1['tree_set_delete'] + entry2['tree_set_delete'] + entry3['tree_set_delete']) / 3,
+        'tree_set_delete_avg': (entry1['tree_set_delete
+
+'] + entry2['tree_set_delete'] + entry3['tree_set_delete']) / 3,
         'tree_set_actions_avg': (entry1['tree_set_actions'] + entry2['tree_set_actions'] + entry3['tree_set_actions']) / 3
     })
 
 # Write the merged data to a CSV file
-with open('results.csv', 'w', newline='') as csvfile:
+with open('data/results.csv', 'w', newline='') as csvfile:
     fieldnames = ['Test Size', 'Skip List Insertion Avg (ms)', 'Tree Set Insertion Avg (ms)', 'Skip List Deletion Avg (ms)', 'Tree Set Deletion Avg (ms)', 'Skip List Actions Avg (ms)', 'Tree Set Actions Avg (ms)']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
@@ -199,17 +265,6 @@ with open('results.csv', 'w', newline='') as csvfile:
             'Tree Set Actions Avg (ms)': data['tree_set_actions_avg']
         })
 ```
-
-### Running the Python Script
-1. Save the above script to a file, e.g., `process_data.py`.
-2. Make sure your `output1.txt`, `output2.txt`, and `output3.txt` files
-
- are in the same directory as the script.
-3. Run the script:
-```bash
-python process_data.py
-```
-4. This will generate a `results.csv` file with the averaged timing data.
 
 ### Visualization in Excel
 
@@ -238,7 +293,7 @@ python process_data.py
 - Y-axis: `Time (ms)`
 
 ### Example Chart
-![Chart Example](performance.png) 
+![Chart Example](images/performance.png) 
 
 ### Conclusion
 
