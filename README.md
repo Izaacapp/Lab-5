@@ -1,9 +1,3 @@
-Here's a more detailed and professional README.md file for your project, including a thorough explanation of your Java program, setup, and analysis process.
-
----
-
-## README.md
-
 # Skip List and Tree Set Performance Comparison
 
 This project compares the performance of Skip List and Tree Set data structures in Java. The primary focus is on measuring the time taken for insertion, deletion, and total actions for various test sizes. The results are analyzed and visualized using Excel.
