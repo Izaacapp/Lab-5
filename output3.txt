@@ -1,0 +1,90 @@
+Test size: 50000
+======
+Skip list insertion took 55 ms.
+Skip list deletion took 43 ms.
+Skip list actions took 98 ms.
+Tree set insertion took 24 ms.
+Tree set deletion took 18 ms.
+Tree set actions took 42 ms.
+
+Test size: 100000
+======
+Skip list insertion took 58 ms.
+Skip list deletion took 46 ms.
+Skip list actions took 104 ms.
+Tree set insertion took 26 ms.
+Tree set deletion took 27 ms.
+Tree set actions took 53 ms.
+
+Test size: 150000
+======
+Skip list insertion took 112 ms.
+Skip list deletion took 135 ms.
+Skip list actions took 247 ms.
+Tree set insertion took 39 ms.
+Tree set deletion took 41 ms.
+Tree set actions took 80 ms.
+
+Test size: 200000
+======
+Skip list insertion took 134 ms.
+Skip list deletion took 137 ms.
+Skip list actions took 271 ms.
+Tree set insertion took 43 ms.
+Tree set deletion took 54 ms.
+Tree set actions took 97 ms.
+
+Test size: 250000
+======
+Skip list insertion took 161 ms.
+Skip list deletion took 179 ms.
+Skip list actions took 340 ms.
+Tree set insertion took 51 ms.
+Tree set deletion took 74 ms.
+Tree set actions took 125 ms.
+
+Test size: 300000
+======
+Skip list insertion took 242 ms.
+Skip list deletion took 326 ms.
+Skip list actions took 568 ms.
+Tree set insertion took 68 ms.
+Tree set deletion took 97 ms.
+Tree set actions took 165 ms.
+
+Test size: 350000
+======
+Skip list insertion took 241 ms.
+Skip list deletion took 329 ms.
+Skip list actions took 570 ms.
+Tree set insertion took 80 ms.
+Tree set deletion took 139 ms.
+Tree set actions took 219 ms.
+
+Test size: 400000
+======
+Skip list insertion took 308 ms.
+Skip list deletion took 408 ms.
+Skip list actions took 716 ms.
+Tree set insertion took 100 ms.
+Tree set deletion took 97 ms.
+Tree set actions took 197 ms.
+
+Test size: 450000
+======
+Skip list insertion took 410 ms.
+Skip list deletion took 434 ms.
+Skip list actions took 844 ms.
+Tree set insertion took 120 ms.
+Tree set deletion took 184 ms.
+Tree set actions took 304 ms.
+
+Test size: 500000
+======
+Skip list insertion took 459 ms.
+Skip list deletion took 458 ms.
+Skip list actions took 917 ms.
+Tree set insertion took 137 ms.
+Tree set deletion took 189 ms.
+Tree set actions took 326 ms.
+
